@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      height: 200px;
+      width: 100px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+    <p draggable="true" class="p1">12300</p>
+  
+  <div> 
+
+  </div>
+  <script>
+    var obj = null;
+    document.ondragstart = function (e) {
+      // console.log('喵喵喵');
+      obj = e.target;
+      // console.log(obj);
+      e.dataTransfer.setData('text/html',e.target.className);
+    }
+    document.ondragover = function (e) {
+      // console.log(e);
+      // e.dataTransfer.setData('text/html',e.target.id);
+      e.preventDefault();
+    }
+    document.ondrop = function (e) {
+      // console.log(e.dataTransfer.getData('text/html'));
+      var id = e.dataTransfer.getData('text/html');
+      // console.log(document.getElementById(id));
+      // console.log(id);
+      e.target.appendChild(document.querySelector('.'+id));
+    }
+  </script>
+</body>
+</html>

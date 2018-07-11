@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background:url("images/bg.jpg") center center/cover;
+            perspective: 500px;
+        }
+
+        ul{
+            width: 600px;
+            height: 600px;
+            position: relative;
+            margin: 40px auto;
+            /*background-color: blue;*/
+            list-style:none;
+            transform-style: preserve-3d;
+        }
+        li{
+            position: absolute;
+            border: 2px solid #394057;
+            box-sizing: border-box;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%,-50%);
+        }
+        li span{
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: red;
+            position: absolute;
+            left: 5px;
+            /*top: ;*/
+        }
+        li:nth-child(1){
+            width: 60px;
+            height: 60px;
+            background-color: orange;
+            transform:translate(-50%,-50%) rotateX(45deg);
+            /*animation: move 5s linear infinite;*/
+            /*transform-origin: center center;*/
+            animation: change 6s linear infinite;
+        }
+        @keyframes change {
+             0%{
+                 transform:translate(-50%,-50%) rotateY(0deg)  ;
+             }
+             50%{
+                 transform:translate(-50%,-50%) rotateY(180deg) ;
+             }
+             /*60%{*/
+             /*transform:translate(-50%,-50%) rotateY(180deg) rotateZ(180deg);*/
+             /*}*/
+             /*100%{*/
+             /*transform:translate(-50%,-50%) rotateY(360deg)  rotateZ(360deg);*/
+             /*}*/
+             /*50%{*/
+             /*transform:translate(-50%,-50%) rotateY(180deg) ;*/
+             /*}*/
+             /*100%{*/
+             /*transform:translate(-50%,-50%) rotateY(360deg)  ;*/
+             /*}*/
+         }
+        li:nth-child(2){
+            width: 120px;
+            height: 120px;
+            animation: move 6s linear infinite;
+        }
+        li:nth-child(2) span{
+           top:80px;
+
+        }
+        li:nth-child(3){
+            width: 180px;
+            height: 180px;
+            animation: move 10s linear infinite;
+        }
+        li:nth-child(3) span{
+            top:120px;
+        }
+        li:nth-child(4){
+            width:240px;
+            height: 240px;
+            animation: move 19s linear infinite;
+        }
+        li:nth-child(4) span{
+            top:154px;
+            animation: move 5s linear infinite;
+        }
+        li:nth-child(4) span:after{
+            content: "";
+            width: 6px;
+            height: 6px;
+            display: block;
+            border-radius: 50%;
+            background-color: orange;
+            position: absolute;
+            top:-10px;
+        }
+        li:nth-child(5){
+            width:300px;
+            height: 300px;
+            /*animation: move 10s linear infinite;*/
+            animation: change 5s linear infinite ;
+            background: url(images/asteroids_meteorids.png) center center/cover;
+        }
+        li:nth-child(5) span{
+            top:150px;
+            left: -7px;
+            transform-origin: 156px 0px;
+            animation:move1 5s linear infinite;
+        }
+        @keyframes move1 {
+            0%{
+                transform:  rotateZ(0deg);
+            }
+            100%{
+                transform: rotateZ(360deg) ;
+            }
+        }
+
+        li:nth-child(6){
+            width: 360px;
+            height: 360px;
+            animation: move 20s linear infinite;
+        }
+        li:nth-child(6) span{
+            top:223px;
+        }
+        li:nth-child(7){
+            width:420px;
+            height: 420px;
+            animation: move 17s linear infinite;
+        }
+        li:nth-child(7) span{
+            top:258px;
+
+
+        }
+        li:nth-child(7) span:after{
+            content: '';
+            width: 16px;
+            height: 16px;
+            display: block;
+            border: 2px solid gray;
+            border-radius: 50%;
+            transform: skew(0deg,45deg);
+
+        }
+        li:nth-child(8){
+            width: 480px;
+            height:480px;
+            animation: move 6s linear infinite;
+        }
+        li:nth-child(8) span{
+            top:294px;
+        }
+        li:nth-child(9){
+            width: 540px;
+            height: 540px;
+            animation: move 8s linear infinite;
+        }
+        li:nth-child(9) span{
+            top:324px;
+        }
+        li:nth-child(10){
+            width: 600px;
+            height: 600px;
+            animation: move 10s linear infinite;
+        }
+        li:nth-child(10) span{
+            top:359px;
+        }
+        @keyframes move {
+           0%{
+               transform: translate(-50%,-50%) rotate(0deg);
+           }
+            100%{
+                transform: translate(-50%,-50%) rotate(360deg) ;
+            }
+        }
+    </style>
+</head>
+<body>
+  <ul>
+      <li class="item"></li>
+      <li class="item"><span></span></li>
+      <li class="item"><span></span></li>
+      <li class="item"><span></span></li>
+      <li class="item"><span></span></li>
+      <li class="item"><span></span></li>
+      <li class="item"><span></span></li>
+      <li class="item"><span></span></li>
+      <li class="item"><span></span></li>
+      <li class="item"><span></span></li>
+  </ul>
+</body>
+</html>

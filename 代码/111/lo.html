@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="template-web.js"></script>
+
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<input type="text" id="ip">
+<input id="btn" type="button" value="快点我">
+<ul id="uls">
+</ul>
+<script>
+            $(function(){
+                var list=JSON.parse(localStorage.getItem('aa')||'[]');
+                $('#uls').html(template("aa",{data:list}))
+                $('#btn').click(function(){
+                    list=JSON.parse(localStorage.getItem('aa')||'[]');
+
+                    var ip=document.querySelector('#ip').value;
+                    list.push(ip);
+
+                    localStorage.setItem('aa',JSON.stringify(list));
+                    var  html=template("aa",{data:list});
+                    console.log(html);
+                    $('#uls').html(template("aa",{data:list}))
+                })
+            })
+
+</script>
+
+<script type="text/html" id="aa">
+    {{each data as  item}}
+        <li>{{item}}</li>
+    {{/each}}
+</script>
+</body>
+</html>

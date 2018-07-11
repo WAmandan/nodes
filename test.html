@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="file" name="myfile" multiple>
+  <input type="submit" value="提交">
+  <script>
+    window.onload = function () {
+      var myFile = document.querySelector('input');
+      myFile.onchange = function () {
+        var result = this.files;
+        console.log(result);
+        for(var i = 0; i < result.length; i++) {
+          var file = new FileReader();
+          file.readAsDataURL(result[i]);   
+          file.onload = function () {
+            var img = document.createElement('img');
+            document.body.appendChild(img);
+            img.src = e.target.result;
+          }
+        }
+        
+      }
+    }
+  </script>
+</body>
+</html>

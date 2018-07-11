@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      list-style: none;
+      perspective: 500px;
+    }
+    li {
+      height: 30px;
+      width: 70px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .left {
+      float: left;
+      background-color: aqua;
+      border: 1px solid red;
+    }
+    .right1,.right2,.right3,.right4 {
+      /* float: left; */
+      position: absolute;
+      top: 0; 
+      /* left: 0px; */
+      transform: translateZ(-500) rotateZ(90deg);
+      background-color: yellow;
+      border: 1px solid blue;
+    }
+    .right1 {
+      left: 0;
+    }
+    .right2 {
+      left: 70px;
+    }
+    .right3 {
+      left: 140px;
+    }
+    .right4 {
+      left:210px;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <!-- <li class="left">一</li>
+    <li class="left">一</li>
+    <li class="left">一</li>
+    <li class="left">一</li> -->
+    <li class="right1">二</li>
+    <li class="right2">二</li>
+    <li class="right3">二</li>
+    <li class="right4">二</li>
+  </ul>
+</body>
+</html>

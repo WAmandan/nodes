@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>头像上传</title>
+    
+</head>
+<body>
+    <div>
+        <img src="../images/l1.jpg" alt="">
+        <input type="button" id = "full" value="全屏">
+        <input type="button" id = "cancelfull" value="取消全屏">
+        <input type="button" id = "isfull" value="是否全屏">
+    </div>
+    <script>
+        window.onload = function () {
+            var div = document.querySelector("div");
+            document.querySelector("#full").onclick = function () {
+                if(div.requestFullScreen) {
+                    div.requestFullScreen();
+                } else if (div.webkitRequestFullScreen) {
+                    div.webkitRequestFullScreen();
+                } else if (div.msRequestFullScreen) {
+                    div.msRequestFullScreen();
+                } else if (div.mozRequestFullScreen) {
+                    div.mozRequestFullScreen();
+                }
+            }
+            document.querySelector("#cancelfull").onclick = function () {
+                if(document.cancelFullScreen) {
+                    document.cancelFullScreen();
+                } else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                } else if (document.msCancelFullScreen) {
+                    document.msCancelFullScreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                }
+            }
+            document.querySelector("#isfull").onclick = function () {
+                if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement || document.mozFullScreenElement) {
+                    alert(true);
+                } else {
+                    alert(false);
+                }
+            }
+        }    
+       
+    </script>
+</body>
+</html>

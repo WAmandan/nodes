@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+<h3 class="playerTitle">视频播放器</h3>
+<div class="player">
+    <video src="../mp4/chrome.mp4"></video>
+    <div class="controls">
+        <a href="javascript:;" class="switch fa fa-play"></a>
+        <a href="javascript:;" class="expand fa fa-expand"></a>
+        <div class="progress">
+            <div class="bar" style="background-color: #fff;"></div>
+            <div class="loaded"></div>
+            <div class="elapse"></div>
+        </div>
+        <div class="time">
+            <span class="currentTime">00:00:00</span>
+            \
+            <span class="totalTime">00:00:00</span>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script>
+   $(function(){
+       var video=$('video')[0];
+
+
+       $('.switch').click(function(){
+           if(video.paused){
+               video.play();
+           }else{
+               video.pause();
+           }
+           $(this).toggleClass('fa-play fa-pause')
+       });
+       $('.expand').click(function(){
+            if(video.requestFullScreen) {
+                video.requestFullScreen();
+            }else if(video.webkitRequestFullScreen){
+                video.webkitRequestFullScreen();
+            }else if(video.mozRequestFullScreen){
+                video.webkitRequestFullScreen();
+            }else if(video.msRequestFullScreen){
+                video.msRequestFullScreen();
+            }
+       });
+
+
+
+
+       function aa(total){
+           var hour=Math.floor(total/3600);
+           var min=Math.floor(total%3600/60);
+           var sec=Math.floor(total%60);
+
+           hour=hour<10?0+hour:hour;
+           min=min<10?0+min:min;
+           sec=sec<10?0+sec:sec;
+           return hour+':'+min+':'+sec
+       }
+
+       video.oncanplay=function(){
+           var total=video.duration;
+
+           /*var hour=Math.floor(total/3600);
+           var min=Math.floor(total%3600/60);
+           var sec=Math.floor(total%60);
+
+           hour=hour<10?0+hour:hour;
+           min=min<10?0+min:min;
+           sec=sec<10?0+sec:sec;*/
+
+           var res=aa(total);
+           setTimeout(function() {
+               video.style.display="block";
+               $('.totalTime').html(res);
+           },1000)
+       }
+
+       video.ontimeupdate=function(){
+           var time=video.currentTime;
+           var res=aa(time);
+
+           /*var hour=Math.floor(time/3600);
+           var min=Math.floor(time%3600/60);
+           var sec=Math.floor(time%60);
+
+           hour=hour<10?0+hour:hour;
+           min=min<10?0+min:min;
+           sec=sec<10?0+sec:sec;*/
+           $('.currentTime').html(res);
+           var parcent=time/video.duration*100+'%';
+           $('.elapse').width(parcent);
+       };
+
+       $('.bar').click(function(e){
+           var width=$(this).width();
+           var pp=(e.offsetX)/width;
+           var tt=pp*video.duration;
+           video.currentTime=tt;
+       })
+
+       video.onended=function(){
+           video.currentTime=0;
+           $('.switch').removeClass('fa-pause').addClass('fa-play')
+       }
+
+
+   })
+</script>
+</body>
+</html>

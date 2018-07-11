@@ -1,0 +1,96 @@
+body {
+  background-color: #EEEEEE;
+}
+.check {
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+}
+.check-title {
+  height: 30px;
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 10px;
+  position: relative;
+}
+.forback {
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  line-height: 30px;
+}
+.forback i {
+  font-family: "iconfont";
+  display: block;
+  margin-right: 10px;
+  font-style: normal;
+  float: left;
+  font-weight: 700;
+}
+.forback span {
+  float: left;
+  display: block;
+}
+.check-title h3 {
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  line-height: 30px;
+  font-size: 16px;
+}
+.check-body {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 1px 1px 1px #DCDCDC;
+}
+.check-body form {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.check-body form div {
+  line-height: 45px;
+  width: 100%;
+  border-bottom: 1px solid #E5E5E5;
+  padding: 0 20px;
+  position: relative;
+}
+.check-body form div:nth-child(4) {
+  border-bottom: none;
+}
+.check-body div span:first-child {
+  color: black;
+  float: left;
+  display: block;
+}
+.check-body div span:last-child {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+}
+.check-body input {
+  color: rgb(17, 16, 16);
+  height: 30px;
+  width: 50%;
+  font-size: 15px;
+}
+.check-body input::-webkit-input-placeholder{color:#ccc; font-size:12px;}
+.check-body input:-moz-placeholder{color:#ccc; font-size:12px;}
+.check-body input::-moz-placeholder{color:#ccc; font-size:12px;}
+.check-body input:-ms-input-placeholder{color:#ccc; font-size:12px;}
+
+.check-body div:last-child input {
+  position: absolute;
+  bottom: -65px;
+  left: 0;
+  height: 45px;
+  width: 100%;
+  background-color: #FFCF49;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+}

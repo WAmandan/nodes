@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .test {
+            font-size: 20px;
+            position: relative;
+        }
+
+        .container {
+            width: 500px;
+            height: 420px;
+            position: relative;
+            margin: 0 auto;
+            padding-top: 200px;
+            perspective: 2000px;
+            -webkit-perspective: 2000px;
+            perspective-origin-y: 100px;
+            -webkit-perspective-origin-y: 100px;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transform: translateZ(-400px) rotateY(0deg);
+            animation: rotate0 10s infinite linear;
+            background: url(images/dog2.jpg) no-repeat 50% -5%;
+            background-size: 330px;
+            /* 添加动画名叫rotate0，持续10s,以线性持续运动*/
+        }
+
+        .carousel div {
+            width: 350px;
+            height: 250px;
+            background-color: rgba(72, 83, 121, 0.5);
+            display: block;
+            position: absolute;
+            left: 50%;
+            margin-left: -150px;
+            font-size: 80px;
+            color: red;
+            display: flex;
+            align-items: center;
+            /*垂直居中*/
+            justify-content: center;
+            /*水平居中*/
+        }
+
+        .rotate-0 {
+            transform: rotateY(0deg) translateZ(400px);
+        }
+
+        .rotate-1 {
+            transform: rotateY(60deg) translateZ(400px);
+        }
+
+        .rotate-2 {
+            transform: rotateY(120deg) translateZ(400px);
+        }
+
+        .rotate-3 {
+            transform: rotateY(180deg) translateZ(400px);
+        }
+
+        .rotate-4 {
+            transform: rotateY(240deg) translateZ(400px);
+        }
+
+        .rotate-5 {
+            transform: rotateY(300deg) translateZ(400px);
+        }
+
+        @keyframes rotate0 {
+            /* 动画rotate0 */
+            from {
+                transform: translateZ(-400px) rotateY(360deg);
+            }
+            to {
+                transform: translateZ(-400px) rotateY(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="test">
+        <div class="container">
+
+            <div id="carousel" class="carousel">
+                <div class="rotate-0">
+                    <img src="images/dog.gif" alt="">
+                </div>
+                <div class="rotate-1">
+                    <img src="images/dog.gif" alt="">
+                </div>
+                <div class="rotate-2">
+                    <img src="images/dog.gif" alt="">
+                </div>
+                <div class="rotate-3">
+                    <img src="images/dog.gif" alt="">
+                </div>
+                <div class="rotate-4">
+                    <img src="images/dog.gif" alt="">
+                </div>
+                <div class="rotate-5">
+                    <img src="images/dog.gif" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

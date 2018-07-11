@@ -1,0 +1,253 @@
+
+
+/* 第一屏start */
+.section1 {
+      background: #fadd67 url(../img/t1fpyqfltdxxaiulhh-990-600.png) no-repeat center bottom;
+}
+.goshop{
+      position: fixed;
+      top: 5%;
+      right: 10%;
+      z-index: 999;
+}
+.bgmore {
+      position: absolute;
+      left: 50%;
+      top:50%;
+      transform: translateX(-50%);
+}
+.section1-sofa {
+      position: absolute;
+      left: 40%;
+      top: 30%;
+      transform: translateX(-40%);
+      animation: sofa 2s linear infinite;
+}
+@keyframes sofa {
+      50% {
+            top:28%;
+      }
+      100% {
+            top:30%;
+      }
+}
+.fly{
+      position: absolute;
+      top: 10%;
+      right: 20%;
+      animation: fly 3s linear infinite;
+}
+@keyframes fly{
+      50% {
+            top: 20%;
+      }
+      100%{
+            top: 10%;
+      }
+}
+/* 第一屏动画end */
+
+
+/* 第二屏start */
+.section2 {
+      background: #84a2d4 url(../img/t1zdgpfi8exxca6rfn-2000-600.png) no-repeat center bottom;
+      z-index:5;
+}
+.changetitle {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%);
+}
+.mid {
+      position: absolute;
+      bottom: 197px;
+      left: 50%;
+      transform: translateX(-50%);
+      /* background-color: #fadd67; */
+      height: 290px;
+      width: 590px;
+}
+.search1,.search2 {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%);
+      opacity: 0;
+}
+.search1 {
+      left: 150%;
+}
+.search2 {
+      right: 12%;
+}
+.goods {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100px;
+      opacity: 0;
+}
+.section2-sofa,.mask {
+      position: absolute;
+      left: 33%;
+      bottom: 36%;
+      width: 100px;
+      display: none;
+      z-index: 5;
+      /* background-color: aquamarine; */
+}
+.mask {
+      height: 98px;
+      background-color: #fff;
+}
+/* 第二屏动画end */
+
+/* 第三屏start */
+.section3 {
+      background: #EF674D url(../img/main.png) no-repeat center center;
+      z-index: 4;
+}
+.main {
+      position: absolute;
+}
+.title2 {
+      z-index: 1;
+}
+.section3-sofa ,.section3-sofa2{
+      position: absolute;
+      bottom: 40%;
+      left: 41%;
+      transform: translate(-50%);
+      display: none;
+}
+.size {
+      position: absolute;
+      left: 53%;
+      bottom: 30%;
+}
+.btn {
+      position: absolute;
+      left: 60%;
+      bottom: 20%;
+      transform: translateX(-50%);
+}
+.whitesize,.whitebtn {
+      opacity: 0;
+}
+/* 第三屏动画end */
+
+/* 第四屏start */
+.section4 {
+      background: #ffeedd url(../img/t1iresfnxaxxca6rfn-2000-600.png) no-repeat center bottom;
+}
+.section4-title1 ,.section4-title2{
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%);
+}
+.section4-title2 {
+      opacity: 0;
+}
+.bottom {
+      height: 346px;
+      width: 407px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%);
+      z-index: 50;
+}
+.section4-sofa {
+      position: absolute;
+      top: 0;
+      left: 60%;
+      transform: translate(-50%);
+      z-index: -1;
+      display: none;
+}
+.cloud {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      animation: cloud 10s linear infinite;
+}
+.t1f {
+      position: absolute;
+      bottom: 70px;
+      left: 17%;
+      width: 100px;
+      display: none;
+      z-index: 5;
+}
+@keyframes cloud {
+      50% {
+            left: 43%;
+      }
+      100% {
+            left: 0;
+      }
+}
+/* 第四屏动画end */
+.section5 {
+      background: #d04759 url(../img/t1yisqfa4exxa3gmkg-2000-1500.png) no-repeat center bottom;
+      perspective: 500px;
+}
+.over {
+      overflow: hidden;
+      height: 100%;
+      width: 300px;
+      position: absolute;
+      top: 0;
+      right: 10%;
+}
+.title {
+      position: absolute;
+      top: 10%;
+      left: 30%;
+      transform: translate(-50%) skew(0.1);
+      transition: all 3s;
+}
+.order {
+      position: absolute;
+      top: 50%;
+      left: 20%;
+}
+.card {
+      position: absolute;
+      top: 50%;
+      left: 25%;
+      transform: translate(-50%);
+      z-index: 10;
+}
+.mouse1 {
+      position: absolute;
+      top: -30%;
+      right: 10%;
+     
+}
+.mouse2 {
+      position: absolute;
+      top: -30%;
+      right: 10%;
+      display: none;
+}
+.hand {
+      position: absolute;
+      bottom: -40%;
+      right: 85px;
+}
+/* 第五屏动画end */
+.section6 {
+      background: #85D9ED url(../img/t1dvj.fn0gxxb0_fua-2500-600.png) no-repeat 25% bottom;
+}
+/* 第六屏动画end */
+.section7 {
+      background: url(../img/) no-repeat center bottom;
+}
+/* 第七屏动画end */
+.section8 {
+      background: url(../img/) no-repeat center bottom;
+}
+/* 第八屏动画end */
+

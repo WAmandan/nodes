@@ -1,0 +1,114 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+}
+.content {
+  width: 100%;
+  height: 100%;
+  background-color: #eeeeee;
+  max-width: 640px;
+  min-width: 320px;
+}
+.header {
+  padding: 5px 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  border-bottom: 1px solid #ccc;
+}
+.search {
+  width: 100%;
+  padding: 0 60px;
+}
+.search input {
+  line-height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  padding-left: 10px;
+}
+.back {
+  background: url(../img/jd-sprites.png);
+  background-size: 200px 200px;
+  background-position: -20px 0;
+  padding: 10px;
+  position: absolute;
+  left: 10px;
+  top: 15px;
+}
+.menu {
+  background: url(../img/jd-sprites.png);
+  background-size: 200px 200px;
+  background-position: -60px 0;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 10px;
+}
+.body {
+  height: 100%;
+  width: 100%;
+  padding-top: 55px;
+  overflow: hidden;
+}
+.left {
+  width: 80px;
+  height: 100%;
+  overflow: hidden;
+  float: left;
+  position: relative;
+}
+.left > ul {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.left ul li a {
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  color: #333;
+}
+.right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  background-color: #fff;
+}
+.topimg {
+  width: 100%;
+  display: block;
+}
+.topimg img {
+  width: 100%;
+  display: block;
+}
+.right h3 {
+  font-size: 20px;
+  padding: 10px;
+  color: #000000;
+  border-bottom: 1px solid #ccc;
+}
+.right ul {
+  width: 100%;
+  flex: 1;
+}
+.right ul li {
+  width: 33.33%;
+  padding: 10px;
+  text-align: center;
+  float: left;
+}
+.right li h4 {
+  color: #666;
+  font-weight: 400;
+}

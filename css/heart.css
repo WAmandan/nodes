@@ -1,0 +1,41 @@
+.main {
+  margin: 100px auto;
+  height: 800px;
+  width: 1000px;
+  position: relative;
+}
+.left,.right {
+  height: 100px;
+  width: 100px;
+  /* background-color: aquamarine; */
+  /* background-linner-g */
+  background: red;
+  /* background: radial-gradient(ellipse farthest-side at center center, red 100px, #FF4D4D); */
+  /* background: -webkit-radial-gradient(ellipse farthest-side at center center, red 100px, #FF4D4D); */
+  border-radius: 50%;
+  position: absolute;
+  top:0;
+
+}
+.left {
+  left: 220px;
+  z-index: 2;
+  box-shadow: -16px 0 20px red;
+}
+.right {
+  left: 270px;
+  z-index: 1;
+  box-shadow: 16px 0 20px red;
+}
+.bottom {
+  position: absolute;
+  top: 35px;
+  left: 250px;
+  height: 90px;
+  width: 90px;
+  background-color: red;
+  /* background:radial-gradient(red 90%, #FF4D4D 10%); */
+  box-shadow: 16px 16px 20px red;
+  transform: rotate(45deg);
+  z-index: -1;
+}

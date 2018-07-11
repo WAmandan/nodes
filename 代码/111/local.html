@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="jquery.min.js"></script>
+    <script src="template-web.js"></script>
+
+</head>
+<body>
+
+
+<input type="text" id="userName">
+
+<input type="button" id="btn" value="快点我">
+
+
+    <ul id="uls">
+
+    </ul>
+<!--<input type="button" value="设置数据" id="setData">
+<input type="button" value="获取数据" id="getData">
+<input type="button" value="删除数据" id="removeData">-->
+
+<script>
+    /*document.querySelector("#setData").onclick=function(){
+        var name=document.querySelector("#userName").value;
+        /!*使用localStorage存储数据*!/
+        window.localStorage.setItem("userName",name);
+    }
+    /!*获取数据*!/
+    document.querySelector("#getData").onclick=function(){
+        var name=window.localStorage.getItem("userName");
+        alert(name);
+    }
+    /!*清除数据*!/
+    document.querySelector("#removeData").onclick=function(){
+        window.localStorage.removeItem("userName");
+    }*/
+
+
+    $(function(){
+        var get=JSON.parse(window.localStorage.getItem("aa")||'[]');
+
+        var  html=template("tpl",{data:get});
+
+        console.log(html);
+        $('#uls').html(html);
+
+        var  btn=document.querySelector('#btn');
+        var  userName=document.querySelector('#userName');
+        
+        btn.onclick=function(){
+            var val=userName.value;
+
+            get=JSON.parse(window.localStorage.getItem("aa")||'[]');
+
+            get.push(val)
+            console.log(get);
+
+            window.localStorage.setItem("aa",JSON.stringify(get));
+
+            var  html=template("tpl",{data:get});
+
+            console.log(html);
+            $('#uls').html(html);
+        }
+    })
+
+
+
+</script>
+
+<script type="text/html" id="tpl">
+{{each data as item}}
+    <li>{{item}}</li>
+    {{/each}}
+</script>
+
+</body>
+</html>

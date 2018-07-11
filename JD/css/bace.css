@@ -1,0 +1,21 @@
+html,body,div,a,ul,li,img,h1,h2,h3,h4,h5,h6,p,input,form {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: 13px;
+  color: #ccc;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0px;
+    clear: both;
+    visibility: hidden;
+}

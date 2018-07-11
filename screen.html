@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="screen">
+      <img src="img/card-05.png" alt="">
+      <input type="button" value="全屏" id = "btn1">
+      <input type="button" value="退出全屏" id = "btn2">
+      <input type="button" value="切换" id = "btn3">
+  </div>
+  
+</body>
+<script>
+  window.onload = function () {
+    var screen = document.querySelector('#screen');
+    var btn1 = document.querySelector('#btn1');
+    var btn2 = document.querySelector('#btn2');
+    var btn3 = document.querySelector('#btn3');
+    btn1.onclick = function () {
+      if(screen.requestFullScreen){
+        screen.requestFullScreen();
+      } else if (screen.webkitRequestFullScreen) {
+        screen.webkitRequestFullScreen();
+      } else if (screen.msRequestFullScreen) {
+        screen.msRequestFullScreen();
+      } else if (screen.oRequestFullScreen) {
+        screen.oRequestFullScreen();
+      } else if(screen.mozRequestFullScreen) {
+        screen.mozRequestFullScreen();
+      }
+     }
+     btn2.onclick = function () {
+      if(document.cancelFullScreen){
+        document.cancelFullScreen();
+      } else if (document.webkitCancelFullScreen) {
+        document.webkitCancelFullScreen();
+      } else if (document.msCancelFullScreen) {
+        document.msCancelFullScreen();
+      } else if (document.oCancelFullScreen) {
+        document.oCancelFullScreen();
+      } else if(document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      }
+     }
+     btn3.onclick = function () {
+      if(document.webkitIsFullScreen){
+        btn2.click();
+      } else {
+        btn1.click();
+      }
+  }
+}
+</script>
+</html>

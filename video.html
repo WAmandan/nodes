@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./代码/css/font-awesome.css">
+    <link rel="stylesheet" href="./代码/css/css.css">
+</head>
+<body>
+    <h3 class="playerTitle">视频播放器</h3>
+    <div class="player">
+        <video src="./代码/mp4/chrome.mp4"></video>
+        <div class="controls">
+            <a href="javascript:;" class="switch fa fa-play"></a>
+            <a href="javascript:;" class="expand fa fa-expand"></a>
+            <div class="progress">
+                <div class="bar"></div>
+                <div class="loaded"></div>
+                <div class="elapse"></div>
+            </div>
+            <div class="time">
+                <span class="currentTime">00:00:00</span>
+                \
+                <span class="totalTime">00:00:00</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./代码/js/jquery.min.js"></script>
+<script>
+  $(function () {
+    // 1 点击暂停播放按钮
+    $('.switch').on('click',function () {
+      if($(this).hasClass('fa-play')) {
+        $(this).removeClass('fa-play').addClass('fa-pause');
+        $('video')[0].play();
+      } else {
+        $(this).removeClass('fa-pause').addClass('fa-play');
+        $('video')[0].pause();
+      }
+    })
+    // 2 点击全屏
+    $('.expand').on('click',function (){
+        if($('video')[0].requestFullScreen) {
+            $('video')[0].requestFullScreen();
+        } else if($('video')[0].webkitRequestFullScreen) {
+            $('video')[0].webkitRequestFullScreen();
+        } else if($('video')[0].msRequestFullScreen) {
+            $('video')[0].msRequestFullScreen();
+        } else if($('video')[0].mozRuestFullScreen) {
+            $('video')[0].mozRequestFullScreen();
+        } else if($('video')[0].oRequestFullScreen) {
+            $('video')[0].oRequestFullScreen();
+        }
+    })
+    var total = null;
+    // 3 获取时间 和当前播放时间
+    $('video')[0].oncanplay = function () {
+        setTimeout(() => {
+            $('video')[0].style.display = 'block';
+            total = this.duration;
+            // console.log(tatol,9999);
+            var result = getTime(total);
+            console.log(result);
+            $('.totalTime').html(result);
+        }, 2000);
+    }
+    // 时间函数封装
+    function getTime(time) {
+        var hour = Math.floor(time / 3600);
+        var min = Math.floor(time % 3600 / 60);
+        var second = Math.floor(time % 60);
+        return hour + ':' + min + ':' + second;
+    }
+    $('video')[0].ontimeupdate  =function () {
+        var current = this.currentTime;
+        var result = getTime(this.currentTime);
+        $('.currentTime').html(result);
+        var changeladding = current / this.duration * 100 + '%';
+        $('.elapse').css('width',changeladding);
+    }
+    // 4 跳播
+    $('.bar').click(function (e) {
+        var X = e.offsetX;
+        var currentX = X / $(this).width();
+        var currenttime = currentX * $('video')[0].duration;
+        $('video')[0].currentTime = currenttime;
+    })
+    $('video')[0].onended = function () {
+        $('video')[0].currentTime = 0;
+        $('.switch').removeClass('fa-pause').addClass('fa-play');
+    }
+  })
+</script>
+</html>
