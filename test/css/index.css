@@ -128,6 +128,7 @@ h6:hover {
   width: 100%;
 }
 .safety .deal {
+  line-height: 50px;
   padding: 10px 20px;
   position: relative;
 }
@@ -142,7 +143,7 @@ h6:hover {
   font-size: 36px;
   color: #333333;
   position: absolute;
-  top: 10px;
+  top: 15px;
   left: 20px;
 }
 .safety .deal .saferight {
@@ -160,4 +161,22 @@ h6:hover {
 }
 .safety .deal .saferight > p {
   font-size: 14px;
+}
+.wjs-order {
+  border-bottom: 1px solid #cccccc;
+  line-height: 50px;
+  margin-bottom: 10px;
+}
+.wjs-order .order-left,
+.wjs-order .order-right {
+  text-align: left;
+}
+.wjs-order .order-left a:hover,
+.wjs-order .order-right a:hover {
+  color: #e92322;
+}
+.wjs-order .order-left a:nth-of-type(2) {
+  color: #e92322;
+  margin-bottom: 5px;
+  border-bottom: 1px dashed #e92322;
 }
